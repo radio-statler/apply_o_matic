@@ -7,43 +7,43 @@ from .choices import *
 
 # Create your models here.
 class Application(models.Model):
-    name = models.CharField(max_length=25,
-                                 label="Name/Handle",
-                                 help_text="Give us your name, handle, or alternate identifying mark",
-                                 error_messages="Please enter your name/handle")
-    email_address = models.EmailField(label="E-Mail",
+    name = models.CharField(verbose_name="Name/Handle",
+                            help_text="Give us your name, handle, or alternate identifying mark",
+                            error_messages={'required': 'Please enter your name/handle' },
+                            max_length=25)
+    email_address = models.EmailField(verbose_name="E-Mail",
                                       help_text="Give us an e-mail address we can use to get in touch with you",
-                                      error_messages="Please enter a valid e-mail address")
-    phone_number = models.PhoneNumberField(label="Phone Number",
+                                      error_messages={'required': 'Please enter a valid e-mail address' })
+    phone_number = PhoneNumberField(verbose_name="Phone Number",
                                            help_text="Give us a phone number to reach you at",
-                                           required=False)
-    show_type = models.IntegerField(label="Show Type",
+                                           blank=True)
+    show_type = models.IntegerField(verbose_name="Show Type",
                                     help_text="What type of show do you want to air",
                                     choices=SHOW_TYPE_CHOICES)
-    show_description = models.TextField(label="Description",
+    show_description = models.TextField(verbose_name="Description",
                                         help_text="Briefly describe the format and content of your show",
-                                        error_messages="You must submit a description")
+                                        error_messages={'required': 'You must submit a description' })
     primary_preferred_day = models.CharField(max_length=8,
-                                             label="Preferred Day",
+                                             verbose_name="Preferred Day",
                                              help_text="Which day would you prefer your show on",
-                                             error_messages="Please choose a preferred day and time",
+                                             error_messages={'required': 'Please choose a preferred day and time' },
                                              choices=PREFERRED_DAY_CHOICES)
     primary_preferred_time = models.CharField(max_length=15,
-                                              label="Preferred Time",
+                                              verbose_name="Preferred Time",
                                               help_text="What time of day would you prefer",
-                                              error_messages="Please choose a preferred day and time",
+                                              error_messages={'required': 'Please choose a preferred day and time' },
                                               choices=PREFERRED_TIME_CHOICES)
     backup_preferred_day = models.CharField(max_length=8,
-                                            label="2nd Preferred Day",
+                                            verbose_name="2nd Preferred Day",
                                             help_text="Which day would you prefer your show on",
                                             choices=PREFERRED_DAY_CHOICES,
-                                            required=False)
+                                            blank=True)
     backup_preferred_time = models.CharField(max_length=15,
-                                             label="2nd Preferred Time",
+                                             verbose_name="2nd Preferred Time",
                                              help_text="What time of day would you prefer",
                                              choices=PREFERRED_TIME_CHOICES,
-                                             required=False)
+                                             blank=True)
     contact_via_sms = models.BooleanField(default=False,
-                                          label="Contact me about my show via SMS")
+                                          verbose_name="Contact me about my show via SMS")
     volunteer_interest = models.BooleanField(default=False,
-                                             label="I'm interested in volunteering to help")
+                                             verbose_name="I'm interested in volunteering to help")
