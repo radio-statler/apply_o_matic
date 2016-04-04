@@ -16,3 +16,12 @@ DATABASES = {
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 STATIC_URL = '/static/'
+
+# We're using SparkPost for our email backend.  Changing this might break things.
+EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
+SPARKPOST_API_KEY = 'API_KEY'
+SPARKPOST_OPTIONS = {
+    'track_opens': False,
+    'track_clicks': False,
+    'transactional': True,
+}
