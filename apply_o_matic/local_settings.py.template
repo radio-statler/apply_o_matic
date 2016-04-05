@@ -25,3 +25,5 @@ SPARKPOST_OPTIONS = {
     'track_clicks': False,
     'transactional': True,
 }
+
+PHONENUMBER_DEFAULT_REGION = "US"
