@@ -17,6 +17,10 @@ class Application(models.Model):
     phone_number = PhoneNumberField(verbose_name="Phone Number",
                                            help_text="Give us a phone number to reach you at",
                                            blank=True)
+    show_name = models.CharField(max_length=45,
+                                 verbose_name="Show Name",
+                                 help_text="A short, catchy title for your show",
+                                 error_messages={'required': 'Your show must have a name.  You can change it later'})
     show_type = models.IntegerField(verbose_name="Show Type",
                                     help_text="What type of show do you want to air",
                                     choices=SHOW_TYPE_CHOICES)
