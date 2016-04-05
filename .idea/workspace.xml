@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="698923c8-f2d4-4077-b3f1-e29721c22e7a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/admin.py" afterPath="$PROJECT_DIR$/applications/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/models.py" afterPath="$PROJECT_DIR$/applications/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/static/scripts/wufoo.js" afterPath="$PROJECT_DIR$/applications/static/scripts/wufoo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/views.py" afterPath="$PROJECT_DIR$/applications/views.py" />
     </list>
@@ -48,8 +46,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/applications/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+                <state relative-caret-position="225">
+                  <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -154,7 +152,7 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/applications/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-22">
+                <state relative-caret-position="23">
                   <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
@@ -770,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1459876574469</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="This commit should theoretically work">
+      <created>1459898881695</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1459898881695</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -820,7 +825,8 @@
     <MESSAGE value="Add phone number region to local_settings.py template" />
     <MESSAGE value="Added error handling to template" />
     <MESSAGE value="Testing email sending" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing email sending" />
+    <MESSAGE value="This commit should theoretically work" />
+    <option name="LAST_COMMIT_MESSAGE" value="This commit should theoretically work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1055,8 +1061,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/applications/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+        <state relative-caret-position="225">
+          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
