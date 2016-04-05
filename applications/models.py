@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.core import urlresolvers
+from django.contrib.contenttypes.models import ContentType
 from phonenumber_field.modelfields import PhoneNumberField
 
 from .choices import *
@@ -51,3 +53,9 @@ class Application(models.Model):
                                           verbose_name="Contact me about my show via SMS")
     volunteer_interest = models.BooleanField(default=False,
                                              verbose_name="I'm interested in volunteering to help")
+
+    @property
+    def get_admin_url(self):
+        content_type = ContentType.objects.get_for_model(self.__class__)
+        return urlresolvers.reverse("admin:%s_%s_change" % (content_type.app_label, content_type.model),
+                                    args=(self.id,))
