@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.core.urlresolvers import reverse
 from django.views.generic import FormView
+
+from django.core.mail import send_mail
 
 from .forms import ApplicationForm
 
@@ -23,5 +23,9 @@ class CreateApplicationView(FormView):
 
     def form_valid(self, form):
         form.save()
+        send_mail(subject='test',
+                  message='retreat-welcome',
+                  from_email='jcooter@magfe.st',
+                  recipient_list=['jcooter@oceanius.com'])
         return super(CreateApplicationView, self).form_valid(form)
 

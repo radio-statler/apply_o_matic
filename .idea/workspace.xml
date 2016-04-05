@@ -4,7 +4,6 @@
     <list default="true" id="698923c8-f2d4-4077-b3f1-e29721c22e7a" name="Default" comment="Added error handling to template">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/static/scripts/wufoo.js" afterPath="$PROJECT_DIR$/applications/static/scripts/wufoo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/templates/index.html" afterPath="$PROJECT_DIR$/applications/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/views.py" afterPath="$PROJECT_DIR$/applications/views.py" />
     </list>
     <ignored path="apply_o_matic.iws" />
@@ -42,13 +41,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/applications/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,18 +126,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applications/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="37" column="206" selection-start-line="37" selection-start-column="206" selection-end-line="37" selection-end-column="206" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wufoo.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/applications/static/scripts/wufoo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="455">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -159,6 +148,7 @@
         <option value="&quot;Joe Cooter&quot; &lt;jcooter@oceanius.com&gt;" />
       </list>
     </option>
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -175,9 +165,9 @@
         <option value="$PROJECT_DIR$/applications/forms.py" />
         <option value="$PROJECT_DIR$/apply_o_matic/local_settings.py.template" />
         <option value="$PROJECT_DIR$/apply_o_matic/local_settings.py" />
-        <option value="$PROJECT_DIR$/applications/views.py" />
         <option value="$PROJECT_DIR$/applications/templates/index.html" />
         <option value="$PROJECT_DIR$/applications/static/scripts/wufoo.js" />
+        <option value="$PROJECT_DIR$/applications/views.py" />
       </list>
     </option>
   </component>
@@ -727,7 +717,14 @@
       <option name="project" value="LOCAL" />
       <updated>1459868610821</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added error handling to template">
+      <created>1459873576227</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1459873576227</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -775,7 +772,8 @@
     <MESSAGE value="Basic Functionality!" />
     <MESSAGE value="Looks pretty now" />
     <MESSAGE value="Add phone number region to local_settings.py template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add phone number region to local_settings.py template" />
+    <MESSAGE value="Added error handling to template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added error handling to template" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -998,29 +996,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applications/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applications/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="37" column="206" selection-start-line="37" selection-start-column="206" selection-end-line="37" selection-end-column="206" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/static/scripts/wufoo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
