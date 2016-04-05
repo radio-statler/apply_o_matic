@@ -20,3 +20,8 @@ class CreateApplicationView(FormView):
               'contact_via_sms',
               'volunteer_interest']
     success_url = 'https://www.google.com'
+
+    def form_valid(self, form):
+        form.save()
+        return super(CreateApplicationView, self).form_valid(form)
+
