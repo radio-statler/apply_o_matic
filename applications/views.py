@@ -54,5 +54,10 @@ class CreateApplicationView(FormView):
             substitution_data=sub_data
 
         )
+        email.transmissions.send(
+            recipient_list='rs-notification-list',
+            template='radio-statler-application-notification',
+            substitution_data=sub_data
+        )
         return super(CreateApplicationView, self).form_valid(form)
 

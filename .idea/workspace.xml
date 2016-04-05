@@ -46,8 +46,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/applications/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+                <state relative-caret-position="248">
+                  <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -775,7 +775,14 @@
       <option name="project" value="LOCAL" />
       <updated>1459898881695</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixing phone number bugs">
+      <created>1459899438261</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1459899438261</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -826,7 +833,8 @@
     <MESSAGE value="Added error handling to template" />
     <MESSAGE value="Testing email sending" />
     <MESSAGE value="This commit should theoretically work" />
-    <option name="LAST_COMMIT_MESSAGE" value="This commit should theoretically work" />
+    <MESSAGE value="Fixing phone number bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing phone number bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1061,8 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/applications/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+        <state relative-caret-position="248">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
