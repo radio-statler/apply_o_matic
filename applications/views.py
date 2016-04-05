@@ -25,6 +25,7 @@ class CreateApplicationView(FormView):
         form.save()
         send_mail(subject='test',
                   message='retreat-welcome',
+                  html_message='retreat-welcome',
                   from_email='jcooter@magfe.st',
                   recipient_list=['jcooter@oceanius.com'])
         return super(CreateApplicationView, self).form_valid(form)
