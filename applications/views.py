@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
-from django.views.generic import CreateView
+from django.views.generic import FormView
 
-from .models import Application
+from .forms import ApplicationForm
 
-class CreateApplicationView(CreateView):
-    model = Application
+class CreateApplicationView(FormView):
+    form_class = ApplicationForm
     template_name = 'index.html'
     fields = ['name',
               'email_address',
@@ -19,6 +19,4 @@ class CreateApplicationView(CreateView):
               'backup_preferred_time',
               'contact_via_sms',
               'volunteer_interest']
-
-    def get_success_url(self):
-        return 'http://google.com'
+    success_url = 'https://www.google.com'

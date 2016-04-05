@@ -1,5 +1,50 @@
-<form action="{% url 'application-submit' %}" method="post">
-    {% csrf_token %}
-    {{  form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Radio Statler: Apply-O-Matic 3000</title>
+
+        <!-- CSS -->
+        <link href="{% static "css/structure.css" %}" rel="stylesheet">
+        <link href="{% static "css/form.css" %}" rel="stylesheet">
+        <link href="{% static "css/theme.css" %}" rel="stylesheet">
+
+        <!-- JavaScript -->
+        <script src="{% static "scripts/wufoo.js" %}"></script>
+
+        <!--[if lt IE 10]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="public">
+        <div id="container" class="ltr">
+            <form id="form2" name="form2" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" method="post" novalidate action="{% url 'application-submit' %}">
+                {% csrf_token %}
+
+                <header id="header" class="info">
+                    <h2>Radio Statler: Apply-O-Matic 3000</h2>
+                    <div>If you're interested in running a show on Radio Statler, fill out the form with your contact information and a little about what you want to put on and we'll get in touch with you.</div>
+                </header>
+                <ul>
+                    {% for field in form %}
+                    <li id="foli{{ forloop.counter }}" class="notranslate      ">
+                        <label class="desc" id="title{{ forloop.counter }}" for="Field{{ forloop.counter }}">{{  field.label }}</label>
+                        <div id="Field{{ forloop.counter }}">
+                            {{ field }}
+                        </div>
+                        {% if field.help_text %}
+                        <p class="instruct" id="instruct{{ forloop.counter }}"><small>{{ field.help_text|safe }}</small></p>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                    <li class="buttons ">
+                        <div>
+                            <input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" />
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div><!--container-->
+    </body>
+</html>
