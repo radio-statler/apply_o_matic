@@ -25,12 +25,13 @@ class CreateApplicationView(FormView):
 
     def form_valid(self, form):
         application = form.save()
-        current_site = get_current_site()
+        current_site = get_current_site(self.request)
         email = SparkPost(settings.SPARKPOST_API_KEY)
+
         sub_data = {
             'name': form.cleaned_data['name'],
             'email': form.cleaned_data['email_address'],
-            'phone_number': form.cleaned_data['phone_number'],
+            'phone_number': form.cleaned_data['phone_number'].as_e164,
             'show_name': form.cleaned_data['show_name'],
             'show_type': form.cleaned_data['show_type'],
             'show_description': form.cleaned_data['show_description'],
