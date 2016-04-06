@@ -40,7 +40,7 @@ class CreateApplicationView(FormView):
             'url': 'https://%s%s' % (current_site.domain, application.get_admin_url)
         }
         if form.cleaned_data['volunteer_interest']:
-            sub_data['volunteer_interest'] = 'yes'
+            sub_data['volunteering'] = 'yes'
         if form.cleaned_data['contact_via_sms']:
             sub_data['sms'] = 'yes'
         if form.cleaned_data['backup_preferred_day']:
