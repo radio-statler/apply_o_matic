@@ -112,3 +112,6 @@ PHONENUMBER_DB_FORMAT = 'E164'
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SLACK_CHANNEL = '#random'
+SLACK_USERNAME = 'apply-o-matic'

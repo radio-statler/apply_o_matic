@@ -3,6 +3,7 @@ from django.views.generic import FormView
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from sparkpost import SparkPost
+from django_slack import slack_message
 
 from .forms import ApplicationForm
 
@@ -59,5 +60,8 @@ class CreateApplicationView(FormView):
             template='radio-statler-show-application-notification',
             substitution_data=sub_data
         )
+        slack_message('new-application.slack', {
+            'application': sub_data,
+        })
         return super(CreateApplicationView, self).form_valid(form)
 
