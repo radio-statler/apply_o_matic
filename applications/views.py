@@ -32,7 +32,7 @@ class CreateApplicationView(FormView):
         sub_data = {
             'name': form.cleaned_data['name'],
             'email': form.cleaned_data['email_address'],
-            'phone_number': form.cleaned_data['phone_number'].as_e164,
+            'phone_number': form.cleaned_data['phone_number'],
             'show_name': form.cleaned_data['show_name'],
             'show_type': form.cleaned_data['show_type'],
             'show_description': form.cleaned_data['show_description'],
