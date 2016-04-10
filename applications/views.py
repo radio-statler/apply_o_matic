@@ -1,9 +1,12 @@
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic import FormView
+from django.views.generic import TemplateView
 
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from sparkpost import SparkPost
-from django_slack import slack_message
+from slackclient import SlackClient
+
 
 from .forms import ApplicationForm
 
@@ -22,12 +25,13 @@ class CreateApplicationView(FormView):
               'backup_preferred_time',
               'contact_via_sms',
               'volunteer_interest']
-    success_url = 'https://www.google.com'
+    success_url = reverse_lazy('submission-success')
 
     def form_valid(self, form):
         application = form.save()
         current_site = get_current_site(self.request)
         email = SparkPost(settings.SPARKPOST_API_KEY)
+        slack = SlackClient(settings.SLACK_TOKEN)
 
         sub_data = {
             'name': form.cleaned_data['name'],
@@ -60,8 +64,13 @@ class CreateApplicationView(FormView):
             template='radio-statler-show-application-notification',
             substitution_data=sub_data
         )
-        slack_message('new-application.slack', {
-            'application': sub_data,
-        })
+        slack.api_call(
+            'chat.postMessage',
+            channel=settings.SLACK_CHANNEL,
+            text='New Show Application: <%s|%s> from %s &lt;%s&gt;' % (sub_data['url'], sub_data['show_name'], sub_data['name'], sub_data['email']),
+            username=settings.SLACK_USERNAME
+        )
         return super(CreateApplicationView, self).form_valid(form)
 
+class SubmissionSuccessView(TemplateView):
+    template_name = 'success.html'

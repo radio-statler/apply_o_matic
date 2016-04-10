@@ -1,0 +1,13 @@
+Babel==2.3.2
+Django==1.9.5
+backports.ssl-match-hostname==3.5.0.1
+django-phonenumber-field==1.1.0
+jsonfield==1.0.3
+phonenumberslite==7.3.0
+pytz==2016.3
+requests==2.9.1
+six==1.10.0
+slackclient==1.0.0
+sparkpost==1.1.1
+websocket-client==0.35.0
+wsgiref==0.1.2

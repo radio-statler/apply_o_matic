@@ -2,4 +2,7 @@ from django.conf.urls import patterns, include, url
 
 import applications.views
 
-urlpatterns = patterns('', url(r'^$', applications.views.CreateApplicationView.as_view(), name="application-submit"))
+urlpatterns = [
+    url(r'^$', applications.views.CreateApplicationView.as_view(), name='application-submit'),
+    url(r'^success/', applications.views.SubmissionSuccessView.as_view(), name='submission-success')
+]

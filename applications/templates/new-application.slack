@@ -1,5 +1,7 @@
 {% extends django_slack %}
 
+{% load django_slack %}
+
 {% block text %}
 New Show Application: <{{ application.url }}|{{ application.show_name }}> from {{ application.name }} &lt;{{ application.email }}&gt;
 {% endblock %}
