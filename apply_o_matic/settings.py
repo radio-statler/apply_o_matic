@@ -152,7 +152,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': 'apply_o_matic.log',
+            'filename': os.path.join(BASE_DIR, 'apply_o_matic.log'),
             'formatter': 'verbose'
         },
     },
