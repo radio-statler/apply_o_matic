@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import ldap
+import logging
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -44,6 +48,30 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'apply_o_matic.urls'
+
+AUTHENTICATION_BACKENDS = [
+    'django_auth_ldap.backend.LDAPBackend',
+]
+
+ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_NEVER)
+AUTH_LDAP_USER_SEARCH = LDAPSearch("cn=users,cn=accounts,dc=radiostatler,dc=com", ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+
+AUTH_LDAP_GROUP_SEARCH = LDAPSearch("cn=groups,cn=accounts,dc=radiostatler,dc=com",
+    ldap.SCOPE_SUBTREE, "(objectClass=ipausergroup)"
+)
+AUTH_LDAP_GROUP_TYPE = GroupOfNamesType()
+
+AUTH_LDAP_REQUIRE_GROUP = 'cn=ipausers,cn=groups,cn=accounts,dc=radiostatler,dc=com'
+AUTH_LDAP_USER_FLAGS_BY_GROUP = {
+    "is_staff": "cn=staff,cn=groups,cn=accounts,dc=radiostatler,dc=com",
+    "is_superuser": "cn=admins,cn=groups,cn=accounts,dc=radiostatler,dc=com"
+}
+
+AUTH_LDAP_USER_ATTR_MAP = {
+    "first_name": "givenName",
+    "last_name": "sn",
+    "email": "mail"
+}
 
 TEMPLATES = [
     {
@@ -107,7 +135,6 @@ STATIC_URL = '/static/'
 
 SLACK_CHANNEL = '#random'
 SLACK_USERNAME = 'apply-o-matic'
-
 
 LOGGING = {
     'version': 1,
