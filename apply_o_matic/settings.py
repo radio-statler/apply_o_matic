@@ -133,7 +133,7 @@ PHONENUMBER_DB_FORMAT = 'E164'
 
 STATIC_URL = '/static/'
 
-SLACK_CHANNEL = '#random'
+SLACK_CHANNEL = '#general'
 SLACK_USERNAME = 'apply-o-matic'
 
 LOGGING = {

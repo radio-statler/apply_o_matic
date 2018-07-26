@@ -35,7 +35,7 @@ class CreateApplicationView(FormView):
 
         sub_data = {
             'name': form.cleaned_data['name'],
-            'email': form.cleaned_data['email_address'],
+            'submitter_email': form.cleaned_data['email_address'],
             'phone_number': str(form.cleaned_data['phone_number']),
             'show_name': form.cleaned_data['show_name'],
             'show_type': form.cleaned_data['show_type'],
@@ -67,7 +67,7 @@ class CreateApplicationView(FormView):
         slack.api_call(
             'chat.postMessage',
             channel=settings.SLACK_CHANNEL,
-            text='New Show Application: <%s|%s> from %s &lt;%s&gt;' % (sub_data['url'], sub_data['show_name'], sub_data['name'], sub_data['email']),
+            text='New Show Application: <%s|%s> from %s &lt;%s&gt;' % (sub_data['url'], sub_data['show_name'], sub_data['name'], sub_data['submitter_email']),
             username=settings.SLACK_USERNAME
         )
         return super(CreateApplicationView, self).form_valid(form)
