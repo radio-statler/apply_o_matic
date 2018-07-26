@@ -9,6 +9,7 @@ from slackclient import SlackClient
 
 
 from .forms import ApplicationForm
+from .choices import SHOW_TYPE_CHOICES, PREFERRED_DAY_CHOICES, PREFERRED_TIME_CHOICES
 
 class CreateApplicationView(FormView):
     form_class = ApplicationForm
@@ -38,10 +39,10 @@ class CreateApplicationView(FormView):
             'submitter_email': form.cleaned_data['email_address'],
             'phone_number': str(form.cleaned_data['phone_number']),
             'show_name': form.cleaned_data['show_name'],
-            'show_type': form.cleaned_data['show_type'],
+            'show_type': [choice for choice in SHOW_TYPE_CHOICES if choice[0] == form.cleaned_data['show_type']][0][1],
             'show_description': form.cleaned_data['show_description'],
-            'pri_preferred_day': form.cleaned_data['primary_preferred_day'],
-            'pri_preferred_time': form.cleaned_data['primary_preferred_time'],
+            'pri_preferred_day': [choice for choice in PREFERRED_DAY_CHOICES if choice[0] == form.cleaned_data['primary_preferred_day']][0][1],
+            'pri_preferred_time': [choice for choice in PREFERRED_TIME_CHOICES if choice[0] == form.cleaned_data['primary_preferred_time']][0][1],
             'url': 'https://%s%s' % (current_site.domain, application.get_admin_url)
         }
         if form.cleaned_data['volunteer_interest']:
@@ -49,9 +50,9 @@ class CreateApplicationView(FormView):
         if form.cleaned_data['contact_via_sms']:
             sub_data['sms'] = 'yes'
         if form.cleaned_data['backup_preferred_day']:
-            sub_data['bck_preferred_day'] = form.cleaned_data['backup_preferred_day']
+            sub_data['bck_preferred_day'] = [choice for choice in PREFERRED_DAY_CHOICES if choice[0] == form.cleaned_data['backup_preferred_day']][0][1]
         if form.cleaned_data['backup_preferred_time']:
-            sub_data['bck_preferred_time'] = form.cleaned_data['backup_preferred_time']
+            sub_data['bck_preferred_time'] = [choice for choice in PREFERRED_TIME_CHOICES if choice[0] == form.cleaned_data['backup_preferred_time']][0][1]
 
         email.transmissions.send(
             recipients=[form.cleaned_data['email_address']],
