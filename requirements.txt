@@ -2,7 +2,7 @@ Babel==2.5.3
 backports.ssl-match-hostname==3.5.0.1
 certifi==2018.1.18
 chardet==3.0.4
-Django==2.0.3
+Django==2.2.24
 django-phonenumber-field==2.0.0
 idna==2.6
 jsonfield==2.0.2
